@@ -15,4 +15,34 @@ class Part extends Model
         'role',
         'confirmed',
     ];
+
+    public function meeting()
+    {
+        return $this->belongsTo(Meeting::class);
+    }
+
+    public function arrendador()
+    {
+        return $this->belongsTo(User::class, 'part_id');
+    }
+
+    public function arrendatario()
+    {
+        return $this->belongsTo(User::class, 'part_id');
+    }
+
+    public function solidario()
+    {
+        return $this->belongsTo(User::class, 'part_id');
+    }
+
+    public function fiador()
+    {
+        return $this->belongsTo(User::class, 'part_id');
+    }
+
+    public function partChanges()
+    {
+        return $this->hasMany(PartChange::class);
+    }
 }

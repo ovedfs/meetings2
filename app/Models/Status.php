@@ -12,4 +12,9 @@ class Status extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function meetings()
+    {
+        return $this->hasMany(Meeting::class);
+    }
 }

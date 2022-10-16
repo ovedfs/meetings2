@@ -16,4 +16,9 @@ class MeetingChange extends Model
         'old_value',
         'new_value',
     ];
+
+    public function meeting()
+    {
+        return $this->belongsTo(Meeting::class);
+    }
 }
